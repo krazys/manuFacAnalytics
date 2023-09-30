@@ -1,0 +1,21 @@
+.tableSection {
+  background-color: aliceblue;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.tableSection h2 {
+  font-size: 32px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.tableSection h2 span {
+  color: #21243d;
+}
+
+.tableSection .tableBlock {
+  display: flex;
+}
