@@ -1,11 +1,9 @@
 .tableSection {
-  background-color: aliceblue;
   padding: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
 }
 .tableSection h2 {
   font-size: 32px;
@@ -13,9 +11,25 @@
 }
 
 .tableSection h2 span {
-  color: #21243d;
+  color: #6673ee;
 }
 
 .tableSection .tableBlock {
   display: flex;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+.tableBlock thead {
+  background-color: #c1fee9;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  background-color: aliceblue;
 }

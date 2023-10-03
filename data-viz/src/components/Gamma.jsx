@@ -10,8 +10,12 @@ import "../styles/table.css";
 import jsonData from "./dataSet.json";
 
 const Gamma1 = () => {
+  // calculating the new property “Gamma” for each point of
+  // the dataset.
   const datasetWithGammaProperty = calculateGamma(jsonData);
   console.log("datasetWithGammaProperty", datasetWithGammaProperty);
+
+  // Filtering based on Class
 
   const class1 = datasetWithGammaProperty.filter((ele) => ele.Alcohol === 1);
 
@@ -19,6 +23,8 @@ const Gamma1 = () => {
 
   const class3 = datasetWithGammaProperty.filter((ele) => ele.Alcohol === 3);
 
+  // calculating the class-wise mean, median, mode of
+  // "Gamma" for the filtered dataset.
   const class1Mean = meanCalculator(class1.map((data) => Number(data.Gamma)));
   const class1Median = medianCalculator(
     class1.map((data) => Number(data.Gamma))
@@ -37,13 +43,11 @@ const Gamma1 = () => {
   );
   const class3Mode = modeCalculator(class3.map((data) => Number(data.Gamma)));
 
-  console.log("a", class3Mean);
-  console.log("b", class3Median);
-  console.log("e", class2Mode);
-  console.log("d", class1Mode);
-  console.log("c", class3Mode);
-
-  //  "Gamma": ".98", in string in class-3 so the result is NaN
+  // console.log("a", class3Mean);
+  // console.log("b", class3Median);
+  // console.log("e", class2Mode);
+  // console.log("d", class1Mode);
+  // console.log("c", class3Mode);
 
   return (
     <div className="tableSection">

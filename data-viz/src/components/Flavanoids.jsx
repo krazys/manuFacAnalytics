@@ -8,14 +8,15 @@ import "../styles/table.css";
 
 import jsonData from "./dataSet.json";
 const Flavanoids = () => {
+  // Filtering based on Class
   const class1 = jsonData.filter((ele) => ele.Alcohol === 1);
 
   const class2 = jsonData.filter((ele) => ele.Alcohol === 2);
 
   const class3 = jsonData.filter((ele) => ele.Alcohol === 3);
 
-  // console.log(class3);
-
+  // calculating the class-wise mean, median, mode of
+  // “Flavanoids” for the filtered dataset.
   const class1Mean = meanCalculator(class1.map((data) => data.Flavanoids));
   const class1Median = medianCalculator(class1.map((data) => data.Flavanoids));
   const class1Mode = modeCalculator(class1.map((data) => data.Flavanoids));
@@ -24,6 +25,7 @@ const Flavanoids = () => {
   const class2Median = medianCalculator(class2.map((data) => data.Flavanoids));
   const class2Mode = modeCalculator(class2.map((data) => data.Flavanoids));
 
+  // Since some Flavanoids data in dataset is in string - converting into Number
   const class3Mean = meanCalculator(
     class3.map((data) => Number(data.Flavanoids))
   );
@@ -33,10 +35,6 @@ const Flavanoids = () => {
   const class3Mode = modeCalculator(
     class3.map((data) => Number(data.Flavanoids))
   );
-
-  // console.log("a", class3Mean);
-  // console.log("b", class3Median);
-  // console.log("c", class3Mode);
 
   //  "Flavanoids": ".98", in string in class-3 so the result is NaN
 

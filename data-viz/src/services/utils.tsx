@@ -1,7 +1,9 @@
+// Calculating mean
 export function meanCalculator(array: number[]): string {
   return (array.reduce((sum, value) => sum + value) / array.length).toFixed(3);
 }
 
+// Calculating median
 export function medianCalculator(array: number[]): string {
   array.sort((a, b) => a - b);
   const middleIndex = Math.floor(array.length / 2);
@@ -12,6 +14,7 @@ export function medianCalculator(array: number[]): string {
   }
 }
 
+// Calculating mode
 export function modeCalculator(array: number[]): number[] {
   const counts: { [key: number]: number } = {};
   let maxCount = 0;
@@ -35,6 +38,7 @@ export function modeCalculator(array: number[]): number[] {
   return modes;
 }
 
+// calculating “Gamma” property
 interface WineData {
   Alcohol: number;
   "Malic Acid": number;
@@ -65,8 +69,7 @@ export function calculateGamma(data: WineData[]): WineData[] {
     // Calculate Gamma
     const gamma = (ashValue * hueValue) / magnesiumValue;
 
-    // Add the calculated Gamma property to the item
-    // console.log("Gamma", { ...item, Gamma: gamma });
+    // Adding the calculated Gamma property to the item
     return { ...item, Gamma: gamma };
   });
 }
